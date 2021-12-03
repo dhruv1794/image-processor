@@ -1,0 +1,6 @@
+
+.cb {
+  -fx-background-color: black;
+  -fx-mark-color: orange; // arrow color
+}
+.cb > .label { -fx-text-fill: white; }
