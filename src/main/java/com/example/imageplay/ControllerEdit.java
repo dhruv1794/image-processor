@@ -9,7 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Slider;
 import javafx.scene.effect.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -21,10 +20,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ControllerEdit  {
-    String str;
-    @FXML
-    Slider slider;
-    @FXML
+
     javafx.scene.image.ImageView imageView1 = new javafx.scene.image.ImageView();
     static ImageView editView;
     @FXML
@@ -162,15 +158,10 @@ public class ControllerEdit  {
 
     @FXML
     public void choiceAspectRatioClicked(MouseEvent event) {
-
-
-        choiceAspectRatio.getSelectionModel().selectedItemProperty()
-                .addListener((v,oldVal,newVal)-> aspectRatio(images,(String) newVal));
-
-
+        choiceAspectRatio.getSelectionModel().selectedItemProperty().addListener((v,oldVal,newVal)-> aspectRatio(images,(String) newVal));
     }
-    public void aspectRatio(Image image,String value){
 
+    public void aspectRatio(Image image,String value){
 
         switch(value){
             case "Square":
@@ -238,10 +229,6 @@ public class ControllerEdit  {
                 } catch(Exception e) {
                     System.out.println("There was a problem loading the main.fxml file");
                 }
-
-
-
-
             }
 
 
@@ -249,19 +236,6 @@ public class ControllerEdit  {
     }
 
     public void cancelButton(MouseEvent event) throws IOException {
-//        FXMLLoader loader = new FXMLLoader();
-//        loader.setLocation(getClass().getResource("edit_ui.fxml"));
-//
-//        Parent editView = loader.load();
-//        Scene edit = new Scene(editView);
-//
-//
-//        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-//        window.setScene(edit);
-//        window.show();
-//
-//        FXMLLoader loaders = new FXMLLoader();
-//        loaders.setLocation(getClass().getResource("main.fxml"));
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("main.fxml"));
 
@@ -270,21 +244,6 @@ public class ControllerEdit  {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(edit);
         window.show();
-
-        //Stage Information
-//        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-//        window.setScene(edit);
-//        window.show();
-//        System.out.println(image.getHeight());
-//        ControllerEdit controllerEdit=loader.getController();
-//        controllerEdit.setEditImage(image);
-
-
-//        Controller controller= loaders.getController();
-//
-//        Image image = new Image(new File(controller.str).toString());
-//        ControllerEdit controllerEdit=loaders.getController();
-//        controllerEdit.setEditImage(image);
     }
 
 

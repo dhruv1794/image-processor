@@ -9,7 +9,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.PixelReader;
@@ -26,8 +25,6 @@ import java.io.IOException;
 public class Controller {
 
     static String str;
-    @FXML
-    public TextArea textAreaPane2;
 
     @FXML
     private Pane pane1;
@@ -38,11 +35,6 @@ public class Controller {
     @FXML
     public Button editButton;
 
-    @FXML
-    public Button exitButton;
-
-    @FXML
-    public Button restart;
 
     @FXML
     public ImageView imageView2Pane1;
@@ -62,7 +54,7 @@ public class Controller {
     public Image setImage;
 
     @FXML
-    void displayimage(ActionEvent event) {
+    void displayimage(ActionEvent e) {
         FileChooser fc = new FileChooser();
         fc.setInitialDirectory(new File("/Users/dhruvinity/Documents/images"));
         File selectedFile = fc.showOpenDialog(null);
@@ -96,7 +88,7 @@ public class Controller {
     }
 
     @FXML
-    public void exitAxtion(MouseEvent mouseEvent) throws IOException {
+    public void exitAction(MouseEvent mouseEvent)  {
         Platform.exit();
         System.exit(0);
     }
@@ -122,15 +114,15 @@ public class Controller {
         PixelReader pixelReader = image.getPixelReader();
 
         if(pixelReader == null){
-            System.out.println("Cannot read the pixels from the image");
+            System.out.println("Cannot read  the image");
         }
 
         int width = (int)image.getWidth();
         int height = (int)image.getHeight();
         double progress = image.getProgress();
 
-        this.writeInfoMessage("Image Width: " + width, "imageWidth");
-        this.writeInfoMessage("Image Height: " + height, "imageHeight");
+        this.writeInfoMessage("Width of the image: " + width, "imageWidth");
+        this.writeInfoMessage("Height of the image: " + height, "imageHeight");
         this.writeInfoMessage("Progress: " + progress, "imageProgress");
     }
 
@@ -146,7 +138,6 @@ public class Controller {
                 this.imageProgress.setText(msg);
                 break;
         }
-       // this.textAreaPane2.appendText(msg + "\n");
     }
 
     //     Change to edit scene
@@ -164,7 +155,6 @@ public class Controller {
                 Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
                 window.setScene(edit);
                 window.show();
-                System.out.println(image.getHeight());
                 ControllerEdit controllerEdit=loader.getController();
                 controllerEdit.setEditImage(image);
             }
@@ -179,7 +169,6 @@ public class Controller {
         setImage= new Image(str);
         System.out.println(setImage.getHeight());
         ImageView setImageView = new ImageView(setImage);
-
         setImageView.setFitWidth(248);
         setImageView.setFitHeight(367);
         setImageView.setLayoutX(59);

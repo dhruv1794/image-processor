@@ -13,7 +13,7 @@
             <Font name="Avenir Next Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="238.0"  onMouseClicked="#exitAxtion" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: #F90716;" text="Exit" textFill="WHITE" />
+      <Button layoutX="238.0"  onMouseClicked="#exitAction" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: #F90716;" text="Exit" textFill="WHITE" />
       <Button layoutX="323.0"  onMouseClicked="#restart" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: #393E46;" text="Yes" textFill="#00adb5">
          <font>
             <Font name="American Typewriter" size="13.0" />
