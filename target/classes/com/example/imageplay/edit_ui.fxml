@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -14,16 +15,16 @@
     <top>
         <Pane prefHeight="60.0" prefWidth="738.0" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="164.0" layoutY="9.0" prefHeight="46.0" prefWidth="289.0" text="              EDIT" textAlignment="CENTER" textFill="#222831">
+                <Label layoutX="164.0" layoutY="9.0" prefHeight="46.0" prefWidth="289.0" text="EDIT" textAlignment="CENTER" textFill="#222831">
                     <font>
                         <Font name="Avenir Next Bold" size="30.0" />
                     </font>
                 </Label>
-                <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#goBack" prefHeight="44.0" prefWidth="88.0" style="-fx-background-color: #393E46 #393E46;" text="Back" textFill="#00adb5">
-                    <font>
-                        <Font name="American Typewriter" size="15.0" />
-                    </font>
-                </Button>
+<!--                <Button fx:id="back" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#goBack" prefHeight="44.0" prefWidth="88.0" style="-fx-background-color: #393E46 #393E46;" text="Back" textFill="#00adb5">-->
+<!--                    <font>-->
+<!--                        <Font name="American Typewriter" size="15.0" />-->
+<!--                    </font>-->
+<!--                </Button>-->
             </children>
         </Pane>
     </top>
@@ -45,15 +46,22 @@
                             <String fx:value="GaussianBlur" />
                             <String fx:value="Lighting" />
                             <String fx:value="Reflection" />
+                            <String fx:value="boxBlur" />
+                            <String fx:value="colorAdjust" />
+                            <String fx:value="dropShadow" />
+                            <String fx:value="innerShadow" />
+                            <String fx:value="motionBlur" />
+                            <String fx:value="shadow" />
+                            <String fx:value="customMade" />
                         </FXCollections>
                     </items>
                 </ChoiceBox>
-                <Button fx:id="rotateButton" layoutX="12.0" layoutY="115.0" mnemonicParsing="false" onAction="#onRotateButtonClicked" onMouseClicked="#onRotateButtonClicked" prefHeight="52.0" prefWidth="110.0" style="-fx-background-color: #393E46 #393E46;" text="Rotate" textFill="#00adb5">
+                <Button fx:id="rotateButton" layoutX="12.0" layoutY="115.0" mnemonicParsing="false" onAction="#onRotateButtonClicked"  prefHeight="52.0" prefWidth="110.0" style="-fx-background-color: #393E46 #393E46;" text="Rotate" textFill="#00adb5">
                     <font>
                         <Font name="System Italic" size="15.0" />
                     </font>
                 </Button>
-                <Button fx:id="flipButton" layoutX="14.0" layoutY="191.0" mnemonicParsing="false" onAction="#onFlipButtonClicked" onMouseClicked="#onFlipButtonClicked" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: #393E46 #393E46;" text="Flip" textFill="#00adb5">
+                <Button fx:id="flipButton" layoutX="14.0" layoutY="191.0" mnemonicParsing="false" onAction="#onFlipButtonClicked"  prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: #393E46 #393E46;" text="Flip" textFill="#00adb5">
                     <font>
                         <Font name="System Italic" size="15.0" />
                     </font>
@@ -78,7 +86,7 @@
                         <Font name="System Italic" size="15.0" />
                     </font>
                 </Button>
-                <Button layoutX="106.0" layoutY="385.0" mnemonicParsing="false" onAction="#cancelButton" prefHeight="45.0" prefWidth="89.0" style="-fx-background-color: #393E46 #393E46;" text="Cancel" textFill="#00adb5">
+                <Button layoutX="106.0" layoutY="385.0" mnemonicParsing="false" onMouseClicked="#cancelButton" prefHeight="45.0" prefWidth="89.0" style="-fx-background-color: #393E46 #393E46;" text="Cancel" textFill="#00adb5">
                     <font>
                         <Font name="System Italic" size="15.0" />
                     </font>
@@ -93,4 +101,11 @@
             </children>
         </Pane>
     </center>
+   <bottom>
+      <HBox prefHeight="27.0" prefWidth="600.0" style="-fx-background-color: #222831; -fx-alignment: center;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Work of Dhruv Mishra and Ayush" textFill="#00adb5" />
+         </children>
+      </HBox>
+   </bottom>
 </BorderPane>

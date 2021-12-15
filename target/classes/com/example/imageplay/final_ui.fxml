@@ -3,8 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.imageplay.Controller">
    <children>
@@ -13,11 +13,16 @@
             <Font name="Avenir Next Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="238.0" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: #F90716;" text="Exit" textFill="WHITE" />
-      <Button layoutX="323.0" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: #393E46;" text="Yes" textFill="#00adb5">
+      <Button layoutX="238.0"  onMouseClicked="#exitAxtion" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: #F90716;" text="Exit" textFill="WHITE" />
+      <Button layoutX="323.0"  onMouseClicked="#restart" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: #393E46;" text="Yes" textFill="#00adb5">
          <font>
             <Font name="American Typewriter" size="13.0" />
          </font>
       </Button>
+      <HBox layoutY="373.0" prefHeight="27.0" prefWidth="601.0" style="-fx-background-color: #222831; -fx-alignment: center;">
+         <children>
+            <Label text="Work of Dhruv Mishra and Ayush" textFill="#00adb5" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

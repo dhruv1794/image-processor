@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.imageplay.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <AnchorPane prefHeight="608.0" prefWidth="711.0">
+            <children>
+                <Label fx:id="labelPane21" contentDisplay="CENTER" layoutX="201.0" layoutY="95.0" prefHeight="49.0" prefWidth="310.0" style="-fx-label-padding: 10; -fx-alignment: center;" text="Image Processor" textFill="#222831">
+                    <font>
+                        <Font name="Avenir Next Bold" size="18.0" />
+                    </font>
+                </Label>
+            <Button onAction="#startApplication" layoutX="273.0" layoutY="281.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="146.0" style="-fx-label-padding: 10px; -fx-background-color: #393E46 #393E46 #393E46 #393E46;" text="Start" textFill="#00adb5" />
+            <Label fx:id="labelPane211" contentDisplay="CENTER" layoutX="161.0" layoutY="370.0" prefHeight="49.0" prefWidth="389.0" style="-fx-label-padding: 10; -fx-alignment: center;" text="Work of Ayush Joshi and Dhruv Mishra" textFill="#222831">
+               <font>
+                  <Font name="Avenir Next Bold" size="18.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</GridPane>

@@ -1,16 +1,19 @@
 package com.example.imageplay;
 
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.PixelReader;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -31,6 +34,15 @@ public class Controller {
 
     @FXML
     public ImageView imageView1Pane1;
+
+    @FXML
+    public Button editButton;
+
+    @FXML
+    public Button exitButton;
+
+    @FXML
+    public Button restart;
 
     @FXML
     public ImageView imageView2Pane1;
@@ -66,7 +78,42 @@ public class Controller {
             imageView2Pane1.setImage(image);
             pane1.getChildren().add(imageView1Pane1);
             hbox.getChildren().add(imageView2Pane1);
+            if(editButton != null) editButton.setDisable(false);
+
         }
+
+    }
+
+    @FXML
+    void startApplication(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("main.fxml"));
+        Parent editView = loader.load();
+        Scene edit = new Scene(editView);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(edit);
+        window.show();
+    }
+
+    @FXML
+    public void exitAxtion(MouseEvent mouseEvent) throws IOException {
+        Platform.exit();
+        System.exit(0);
+    }
+
+    @FXML
+    public void restart(MouseEvent mouseEvent) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("main.fxml"));
+
+        Parent saveView = loader.load();
+        Scene save = new Scene(saveView);
+
+        //Stage Information
+        Stage window = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        window.setScene(save);
+        window.show();
     }
 
     @FXML
@@ -104,22 +151,27 @@ public class Controller {
 
     //     Change to edit scene
     public void changeScreenButton(ActionEvent event) throws IOException {
+        try {
+            Image image = new Image(new File(str).toString());
+            if(image != null) {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("edit_ui.fxml"));
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("edit_ui.fxml"));
+                Parent editView = loader.load();
+                Scene edit = new Scene(editView);
 
-        Parent editView = loader.load();
-        Scene edit = new Scene(editView);
+                //Stage Information
+                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+                window.setScene(edit);
+                window.show();
+                System.out.println(image.getHeight());
+                ControllerEdit controllerEdit=loader.getController();
+                controllerEdit.setEditImage(image);
+            }
+        } catch(Exception e) {
+            System.out.println("There was a problem switching to Edit page");
+        }
 
-        //Stage Information
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(edit);
-        window.show();
-
-        Image image = new Image(new File(str).toString());
-        System.out.println(image.getHeight());
-        ControllerEdit controllerEdit=loader.getController();
-        controllerEdit.setEditImage(image);
 
     }
 

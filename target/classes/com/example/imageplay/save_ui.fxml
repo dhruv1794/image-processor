@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -38,5 +39,10 @@
                 <Font name="American Typewriter" size="15.0" />
             </font>
         </Button>
+      <HBox layoutY="373.0" prefHeight="27.0" prefWidth="600.0" style="-fx-background-color: #222831; -fx-alignment: center;">
+         <children>
+            <Label text="Work of Dhruv Mishra and Ayush Joshi" textFill="#00adb5" />
+         </children>
+      </HBox>
     </children>
 </Pane>

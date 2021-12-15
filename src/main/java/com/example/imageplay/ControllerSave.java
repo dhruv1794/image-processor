@@ -3,11 +3,16 @@ package com.example.imageplay;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -49,6 +54,16 @@ public class ControllerSave {
     public void buttonAction(ActionEvent event) throws IOException {
 
         saveImage();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("final_ui.fxml"));
+
+        Parent saveView = loader.load();
+        Scene save = new Scene(saveView);
+
+        //Stage Information
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(save);
+        window.show();
 
     }
 
